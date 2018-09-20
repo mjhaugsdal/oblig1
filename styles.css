@@ -1,0 +1,29 @@
+header{
+  color:red;
+}
+
+ul.list{
+  background: green;
+  float:left;
+
+}
+@media screen and (max-width:520px) {
+    ul li#three {clear:left;}
+}
+ul.list1{
+  // EITHER
+  float: left; //Will make all li's be on a single line.
+  //  OR
+  display: inline-block;
+
+  //Always followed by:
+  border-right: 1px solid black;  // will give it the seperating line you want
+}
+
+img{
+  max-width:100%;
+}
+.deleteMe{
+    float: right;
+    background: yellow;
+}
