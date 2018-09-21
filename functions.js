@@ -52,7 +52,7 @@ function createList() {
         var addItem = document.getElementById('list1');
         var entry = document.createElement("li");
         var p = document.createElement("p");
-        text += '<button class="deleteButton">Delete</button>' ;
+        text += '<button onclick="deleteMe(this)">Delete</button>' ;
 
         entry.innerHTML = text;
 
@@ -62,9 +62,28 @@ function createList() {
       }
   });
 }
+
+
+function deleteMe(e)
+{
+  e.parentNode.remove();
+  //e.preventDefault();
+  var listContent = [];
+  var items = document.getElementById('list1').getElementsByTagName('li');
+
+  //localStorage.setItem('myList', JSON.stringify(items));
+  for ( i = 0; i < items.length; i++)
+  {
+    listContent.push(items[i].value);
+  }
+  localStorage.clear();
+  localStorage.setItem('myList', JSON.stringify(listContent));
+
+}
+
 /* JQuery seems to work best for adding and deleting elements on the fly.*/
 //Delete button. Pushes to the list and saves to localStorage
-$(document).on('click','.deleteButton', function(e) {
+/*$(document).on('click','.deleteButton', function(e) {
 
     $(this).parent().remove();
     var listContents = [];
@@ -75,7 +94,7 @@ $(document).on('click','.deleteButton', function(e) {
     e.preventDefault();
     localStorage.clear();
     localStorage.setItem('myList', JSON.stringify(listContents));
-});
+});*/
 
 /*Big thanks to: Source(https://stackoverflow.com/questions/25712602/storing-lists-in-localstorage)*/
 //Add button. Pushes to the list and saves to localStorage

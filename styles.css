@@ -3,12 +3,8 @@ header{
 }
 
 ul.list{
-  background: green;
-  float:left;
-
-}
-@media screen and (max-width:520px) {
-    ul li#three {clear:left;}
+  margin: 0;
+  padding: 0;
 }
 ul.list1{
   // EITHER
@@ -26,4 +22,16 @@ img{
 .deleteMe{
     float: right;
     background: yellow;
+}
+.columns
+{
+    -moz-column-width: 11.5em; /* Firefox */
+    -webkit-column-width: 11.5em; /* webkit, Safari, Chrome */
+    column-width: 11.5em;
+    border-style: double;
+}
+
+.columns ul li:first-child
+{
+    margin-top:0px;
 }
